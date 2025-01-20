@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: pharmacies-producer
+
+pharmacies:
+  data-folder: ${NFE_101_HOME}
+  raw-kafka-topic: pharmacies.raw
+  kafka-server: localhost:9092
+  sync-sending: true

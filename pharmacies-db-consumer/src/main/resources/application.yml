@@ -1,0 +1,27 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: pharmacies-db-consumer
+  datasource:
+    url: jdbc:mysql://localhost:3306/bd_nfe101_tp?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      database-platform: org.hibernate.dialect.MySQLDialect
+  sql:
+    init:
+      mode: always
+      continue-on-error: true
+  logging:
+    level:
+      org.springframework: DEBUG
+      org.hibernate: DEBUG
+
+pharmacies:
+  raw-kafka-topic: pharmacies.raw
+  kafka-server: localhost:9092
